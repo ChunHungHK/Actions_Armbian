@@ -31,7 +31,7 @@ jobs:
         cd build
         ./compile.sh \
         BOARD=hinlink-h88k \
-        BRANCH=current \
+        BRANCH=edge \
         RELEASE=noble \
         BUILD_MINIMAL=no \
         BUILD_DESKTOP=yes \
