@@ -30,7 +30,7 @@ jobs:
       run: |
         cd build
         ./compile.sh \
-BOARD=config/boards/hinlink-h88k \
+BOARD=hinlink-h88k \
 BRANCH=current \
 RELEASE=noble \
 BUILD_MINIMAL=no \
