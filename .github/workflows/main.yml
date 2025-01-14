@@ -30,10 +30,15 @@ jobs:
       run: |
         cd build
         ./compile.sh \
-BOARD=hinlink-h88k \
-BRANCH=current \
-RELEASE=noble \
-BUILD_MINIMAL=no \
-BUILD_DESKTOP=yes \
-DESKTOP_ENVIRONMENT=gnome \
-KERNEL_CONFIGURE=no
+        BOARD=hinlink-h88k \
+        BRANCH=current \
+        RELEASE=noble \
+        BUILD_MINIMAL=no \
+        BUILD_DESKTOP=yes \
+        DESKTOP_ENVIRONMENT=gnome \
+        KERNEL_CONFIGURE=no
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: build/*
