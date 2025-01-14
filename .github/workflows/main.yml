@@ -35,7 +35,6 @@ jobs:
         RELEASE=jammy \
         BUILD_MINIMAL=no \
         BUILD_DESKTOP=yes \
-        DESKTOP_ENVIRONMENT=gnome \
         KERNEL_CONFIGURE=no 
 
     - uses: actions/upload-artifact@v4
