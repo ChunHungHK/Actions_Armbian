@@ -37,7 +37,8 @@ jobs:
         BUILD_DESKTOP=yes \
         KERNEL_CONFIGURE=no \
         DESKTOP_ENVIRONMENT=gnome \
-        DESKTOP_ENVIRONMENT_CONFIG_NAME=config_full
+        DESKTOP_ENVIRONMENT_CONFIG_NAME=config_full \
+        DESKTOP_APPGROUPS_SELECTED='3dsupport browsers chat desktop_tools editors internet multimedia office programming remote_desktop'
 
     - uses: actions/upload-artifact@v4
       with:
