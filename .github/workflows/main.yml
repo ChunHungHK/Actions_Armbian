@@ -1,0 +1,39 @@
+name: Build Armbian
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git curl wget
+
+    - name: Clone Armbian build repository
+      run: |
+        git clone --depth=1 --branch=main https://github.com/armbian/build
+        cd build
+
+    - name: Build Armbian
+      run: |
+        cd build
+        ./compile.sh \
+BOARD=config/boards/hinlink-h88k \
+BRANCH=current \
+RELEASE=noble \
+BUILD_MINIMAL=no \
+BUILD_DESKTOP=yes \
+DESKTOP_ENVIRONMENT=gnome \
+KERNEL_CONFIGURE=no
