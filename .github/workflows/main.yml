@@ -32,7 +32,7 @@ jobs:
         ./compile.sh \
         BOARD=hinlink-h88k \
         BRANCH=edge \
-        RELEASE=noble \
+        RELEASE=jammy \
         BUILD_MINIMAL=no \
         BUILD_DESKTOP=yes \
         DESKTOP_ENVIRONMENT=gnome \
