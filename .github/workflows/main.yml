@@ -36,7 +36,8 @@ jobs:
         BUILD_MINIMAL=no \
         BUILD_DESKTOP=yes \
         DESKTOP_ENVIRONMENT=gnome \
-        KERNEL_CONFIGURE=no
+        KERNEL_CONFIGURE=no \
+        KERNEL_TARGET="edge"
 
     - uses: actions/upload-artifact@v4
       with:
