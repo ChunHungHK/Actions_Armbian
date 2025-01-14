@@ -25,20 +25,8 @@ jobs:
       run: |
         git clone --depth=1 --branch=main https://github.com/armbian/build
         cd build
-
-    - name: Build Armbian
-      run: |
-        cd build
-        ./compile.sh \
-        BOARD=hinlink-h88k \
-        BRANCH=edge \
-        RELEASE=jammy \
-        BUILD_MINIMAL=no \
-        BUILD_DESKTOP=yes \
-        KERNEL_CONFIGURE=no \
-        DESKTOP_ENVIRONMENT=gnome \
-        DESKTOP_ENVIRONMENT_CONFIG_NAME=config_full \
-        DESKTOP_APPGROUPS_SELECTED='3dsupport browsers chat desktop_tools editors internet multimedia office programming remote_desktop'
+        
+##
 
     - uses: actions/upload-artifact@v4
       with:
