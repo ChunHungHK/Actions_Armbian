@@ -1,4 +1,4 @@
-name: Build Armbian
+name: Build Armbian v6.12_hinlink-h88k
 
 on:
   push:
