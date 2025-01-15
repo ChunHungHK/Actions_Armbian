@@ -33,12 +33,11 @@ jobs:
         BOARD=hinlink-h88k \
         BRANCH=edge \
         RELEASE=jammy \
-        BUILD_MINIMAL=no \
-        BUILD_DESKTOP=yes \
+        BUILD_MINIMAL=yes \
+        BUILD_DESKTOP=no \
         KERNEL_CONFIGURE=no \
-        DESKTOP_ENVIRONMENT=gnome \
-        DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base \
-        DESKTOP_APPGROUPS_SELECTED='browsers desktop_tools editors internet programming'
+        KERNELBRANCH="tag:v6.12"
+
 
     - uses: actions/upload-artifact@v4
       with:
