@@ -1,0 +1,46 @@
+name: Build Armbian
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git curl wget
+
+    - name: Clone Armbian build repository
+      run: |
+        git clone --depth=1 --branch=main https://github.com/armbian/build
+        cd build
+        
+    - name: Build Armbian
+      run: |
+        cd build
+        ./compile.sh \
+        BOARD=hinlink-h88k \
+        BRANCH=edge \
+        RELEASE=jammy \
+        BUILD_MINIMAL=yes \
+        BUILD_DESKTOP=no \
+        KERNEL_CONFIGURE=no \
+        KERNELBRANCH="tag:v6.6"
+
+
+    - uses: actions/upload-artifact@v4
+      with:
+        permissions: read-all
+        name: my-artifact
+        path: build/*
