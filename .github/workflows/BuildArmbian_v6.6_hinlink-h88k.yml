@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -36,7 +33,7 @@ jobs:
         BUILD_MINIMAL=yes \
         BUILD_DESKTOP=no \
         KERNEL_CONFIGURE=no \
-        KERNELBRANCH="tag:v6.6"
+        KERNELBRANCH="tag:v6.6.71"
 
 
     - uses: actions/upload-artifact@v4
