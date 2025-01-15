@@ -1,9 +1,7 @@
 name: Build Armbian v6.6_hinlink-h88k
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -33,7 +31,7 @@ jobs:
         BUILD_MINIMAL=yes \
         BUILD_DESKTOP=no \
         KERNEL_CONFIGURE=no \
-        KERNELBRANCH="tag:v6.6.71"
+        KERNELBRANCH="linux-6.6.y"
 
 
     - uses: actions/upload-artifact@v4
